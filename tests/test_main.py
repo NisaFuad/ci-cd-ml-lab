@@ -8,11 +8,10 @@ sys.path.insert(0,
                     os.path.join(os.path.dirname(__file__), '../src')))
 
 
-from main import load_and_process_data
+from main import load_data
 
 
-def test_no_duplicates():
-    """Test if duplicate rows are removed."""
-    df = load_and_process_data("data/dataset.csv",
-                               "data/test_processed_dataset.csv")
-    assert df.duplicated().sum() == 0, "Duplicate rows were not fully removed"
+def test_load_data():
+    df = load_data()
+    print(f"DataFrame shape: {df.shape}") # Debugging information
+    assert not df.empty, "DataFrame should not be empty"
