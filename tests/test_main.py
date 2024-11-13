@@ -16,4 +16,3 @@ def test_no_duplicates():
     df = load_and_process_data("data/dataset.csv",
                                "data/test_processed_dataset.csv")
     assert df.duplicated().sum() == 0, "Duplicate rows were not fully removed"
-
